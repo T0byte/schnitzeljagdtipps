@@ -1,0 +1,4 @@
+name: schnitzeljagdtipps
+version: '${version}'
+main: de.youtuberinsel.schnitzeljagdtipps.Schnitzeljagdtipps
+api-version: '1.20'
