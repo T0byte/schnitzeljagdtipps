@@ -29,7 +29,7 @@ public class SchnitzeljagdProgressCommand implements CommandExecutor {
         try {
             index = Integer.parseInt(strings[0]);
         } catch (NumberFormatException nfe) {
-            commandSender.sendRichMessage("Bitte nutze /schatzsuche_setup <index> <hinweis>");
+            commandSender.sendRichMessage("Bitte nutze /schatzsuche_progress <index>");
             return false;
         }
 

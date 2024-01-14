@@ -20,7 +20,7 @@ public class SchnitzeljagdCommand implements CommandExecutor {
         }
 
         Player player = (Player) commandSender;
-        if(player.hasPermission("youtuberinsel.schatzsuche")) {
+        if(player.hasPermission("youtuberinsel.schatzsuche.start")) {
             PlayerData playerData = PlayerUtility.getPlayerData(player);
             int step = playerData.getSchnitzeljagdschritt();
             String tipp = SchnitzeljagdUtility.getSchnitzeljagdData().get(step);

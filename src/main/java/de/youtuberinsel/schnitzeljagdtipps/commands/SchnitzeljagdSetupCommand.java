@@ -13,10 +13,6 @@ import java.util.List;
 public class SchnitzeljagdSetupCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
-        if(!(commandSender instanceof Player)) {
-            commandSender.sendRichMessage("You must be a player to run this command!");
-            return false;
-        }
 
         if (strings.length == 0 || strings.length == 1 && !(strings[0].equals("all"))) {
             commandSender.sendRichMessage("Bitte nutze /schatzsuche_setup <index> <hinweis>");
@@ -59,8 +55,7 @@ public class SchnitzeljagdSetupCommand implements CommandExecutor {
         strings[0] = "Schritt " + strings[0] + ":";
         String hint = String.join(" ", strings);
 
-        Player player = (Player) commandSender;
-        if(player.hasPermission("youtuberinsel.schatzsuche.setup")) {
+        if(commandSender.hasPermission("youtuberinsel.schatzsuche.setup")) {
             List<String> schnitzeljagdData = SchnitzeljagdUtility.getSchnitzeljagdData();
             if(index >= schnitzeljagdData.size()) {
                 List<String> tippData = SchnitzeljagdUtility.getTippData();
@@ -72,7 +67,7 @@ public class SchnitzeljagdSetupCommand implements CommandExecutor {
             }
             schnitzeljagdData.set(index, hint);
             SchnitzeljagdUtility.setSchnitzeljagdData(schnitzeljagdData);
-            player.sendRichMessage("Schatzsuche eintrag erstellt: \"" + hint + "\"");
+            commandSender.sendRichMessage("Schatzsuche eintrag erstellt: \"" + hint + "\"");
         }
 
         return true;
