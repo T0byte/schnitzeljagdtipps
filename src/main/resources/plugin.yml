@@ -1,0 +1,25 @@
+name: schatzsuche
+version: '1.0'
+main: de.youtuberinsel.schnitzeljagdtipps.Schnitzeljagdtipps
+api-version: '1.20'
+
+commands:
+  schatzsuche:
+    description: Startet eine Schatzsuche
+  schatzsuche_setup:
+    description: erlaubt einträge zu verändern
+  schatzsuche_progress:
+    description: erlaubt die schatzsuche weiterzuführen
+  tipp:
+    description: Gibt tipps für die Schatzsuche
+
+permissions:
+  youtuberinsel.schatzsuche.start:
+    description: erlaubt an einer schatzsuche teilzunehmen
+    default: op
+  youtuberinsel.schatzsuche.setup:
+    description: erlaubt die schatzsuche zu editieren
+    default: op
+  youtuberinsel.schatzsuche.progress:
+    description: erlaubt einen spieler in der schatzsuche voranzubringen
+    default: op
